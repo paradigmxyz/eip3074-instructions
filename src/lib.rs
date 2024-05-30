@@ -4,7 +4,7 @@
 //!
 //! This currently implements the following EIPs:
 //! - [EIP-3074](https://eips.ethereum.org/EIPS/eip-3074): `AUTH` and `AUTHCALL` instructions. The
-//!   implementation is located in the [eip3074] module. The custom instruction context required for
+//!   implementation is located in the [instructions] module. The custom instruction context required for
 //!   `AUTH` and `AUTHCALL` is located in the [context] module.
 
 #![cfg_attr(not(test), warn(unused_crate_dependencies))]
