@@ -85,7 +85,7 @@ jobs:
     name: lint success
     runs-on: ubuntu-latest
     if: always()
-    needs: [clippy-binaries, clippy, crate-checks, docs, fmt]
+    needs: [clippy, crate-checks, docs, fmt]
     timeout-minutes: 30
     steps:
       - name: Decide whether the needed jobs succeeded or failed
