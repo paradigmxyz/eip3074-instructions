@@ -33,7 +33,6 @@ jobs:
         run: |
           cargo nextest run \
             --locked \
-            --workspace \
             -E "kind(lib) | kind(bin) | kind(proc-macro)"
 
   doc:
@@ -49,7 +48,7 @@ jobs:
         with:
           cache-on-failure: true
       - name: Run doctests
-        run: cargo test --doc --workspace
+        run: cargo test --doc
 
   unit-success:
     name: unit success
