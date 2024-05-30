@@ -4,3 +4,24 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+# reth
+reth = { git = "https://github.com/paradigmxyz/reth.git", rev = "76b32c8", features = ["optimism"] }
+
+[dev-dependencies]
+secp256k1 = { version = "0.28.2", default-features = false, features = [
+    "alloc",
+    "recovery",
+    "rand-std"
+] }
+
+[features]
+default = ["optimism"]
+optimism = [
+  "reth/optimism"
+]
+
+[patch.crates-io]
+revm = { git = "https://github.com/bluealloy/revm", rev = "a28a543" }
+revm-interpreter = { git = "https://github.com/bluealloy/revm", rev = "a28a543" }
+revm-precompile = { git = "https://github.com/bluealloy/revm", rev = "a28a543" }
+revm-primitives = { git = "https://github.com/bluealloy/revm", rev = "a28a543" }
