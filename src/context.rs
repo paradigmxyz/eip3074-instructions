@@ -41,7 +41,7 @@ impl InstructionsContext {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use reth::revm::{
+    use revm::{
         interpreter::Interpreter,
         primitives::{address, AccountInfo, Bytecode, TransactTo, U256},
         Context, Evm, InMemoryDB,

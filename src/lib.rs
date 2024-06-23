@@ -1,7 +1,7 @@
 #![doc = include_str!("../README.md")]
 #![cfg_attr(not(test), warn(unused_crate_dependencies))]
 
-use reth::revm::interpreter::opcode::BoxedInstruction;
+use revm::interpreter::opcode::BoxedInstruction;
 
 /// This contains the custom instruction context required for `AUTH` and `AUTHCALL` instructions,
 /// notably for the `authorized` context variable.

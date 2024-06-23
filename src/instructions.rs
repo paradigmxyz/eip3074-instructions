@@ -2,7 +2,7 @@
 //!
 
 use crate::{context::InstructionsContext, BoxedInstructionWithOpCode};
-use reth::revm::{
+use revm::{
     interpreter::{
         gas,
         gas::{warm_cold_cost, NEWACCOUNT},
@@ -317,7 +317,7 @@ fn authcall_instruction<EXT, DB: Database>(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use reth::revm::{
+    use revm::{
         db::{CacheDB, EmptyDBTyped},
         interpreter::{Contract, SharedMemory, Stack},
         primitives::{address, Account, Bytecode, Bytes},
@@ -355,7 +355,7 @@ mod tests {
             .build()
     }
 
-    fn setup_context() -> reth::revm::Context<(), CacheDB<EmptyDBTyped<Infallible>>> {
+    fn setup_context() -> revm::Context<(), CacheDB<EmptyDBTyped<Infallible>>> {
         setup_evm().context
     }
 
