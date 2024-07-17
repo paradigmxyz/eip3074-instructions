@@ -329,13 +329,14 @@ mod tests {
     fn setup_interpreter() -> Interpreter {
         let code = Bytecode::new_raw([AUTH_OPCODE, 0x00].into());
         let code_hash = code.hash_slow();
-        let contract = Contract::new(
+        let contract: Contract = Contract::new(
             Bytes::new(),
             code,
             Some(code_hash),
             Address::default(),
-            Address::default(),
-            B256::ZERO.into(),
+            Some(Address::default()),
+            Address::ZERO,
+            U256::ZERO,
         );
 
         let interpreter = Interpreter::new(contract, 3000000, false);
